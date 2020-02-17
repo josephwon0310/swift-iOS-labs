@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var startingPointKartView1 = CGPoint()
     var startingPointKartView2 = CGPoint()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         startingPointKartView0 = kartView0.center
@@ -66,10 +67,18 @@ class ViewController: UIViewController {
 //        kartView1.center = startingPointKartView1
 //        kartView2.center = startingPointKartView2
         
+
+        
         UIView.animate(withDuration: 0.8) {
-              self.kartView0.center = self.startingPointKartView0
-              self.kartView1.center = self.startingPointKartView1
-              self.kartView2.center = self.startingPointKartView2
+            self.kartView0.transform = CGAffineTransform.identity
+            self.kartView1.transform = CGAffineTransform.identity
+            self.kartView2.transform = CGAffineTransform.identity
+        }
+        
+        UIView.animate(withDuration: 0.8) {
+            self.kartView0.center = self.startingPointKartView0
+            self.kartView1.center = self.startingPointKartView1
+            self.kartView2.center = self.startingPointKartView2
         }
     }
     
